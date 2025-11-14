@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ComplexiTea - Research Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-dark: #050806;
+      --text-dark: #f6f7f5;
+      --muted-dark: #c3c9bf;
+
+      --bg-light: #f6f7f5;
+      --text-light: #111311;
+      --muted-light: #646d63;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #1b3c1f 0, #050806 55%);
+      color: var(--text-dark);
+    }
+
+    main.page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem 1.8rem;
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .logo {
+      margin: 0 auto 1.7rem;
+      max-width: 260px;
+      width: 70vw;
+    }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted-dark);
+      margin-bottom: 1.1rem;
+    }
+
+    .keywords {
+      font-size: 0.85rem;
+      color: var(--muted-dark);
+      margin-bottom: 1.6rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.75rem;
+      color: var(--muted-dark);
+    }
+
+    footer {
+      font-size: 0.75rem;
+      color: var(--muted-dark);
+    }
+
+    /* Light mode variant */
+    @media (prefers-color-scheme: light) {
+      body {
+        background: var(--bg-light);
+        color: var(--text-light);
+      }
+      .subtitle,
+      .keywords,
+      .pill,
+      footer {
+        color: var(--muted-light);
+      }
+      .pill {
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="logo">
+      <!-- Put your logo file here -->
+      <img src="complexitea-logo.png" alt="ComplexiTea research group logo" />
+    </div>
+
+    <p class="subtitle">
+      Research group in theoretical computer science and complexity.
+    </p>
+
+    <p class="keywords">
+      Algorithmic complexity · information theory · reverese engineering · cryptography · models of computation
+    </p>
+
+    <div class="pill-row">
+      <span class="pill">Seminars</span>
+      <span class="pill">Paper reading</span>
+      <span class="pill">Student projects</span>
+      <span class="pill">Discussions (with tea)</span>
+    </div>
+
+    <footer>
+      Contact (Public group): https://signal.group/#CjQKIISLb7TSsimNCzGu_kweogAIK9qUr_0z9ksXJ5698l_AEhCHbUyZ2QI2VxElNXTqNVhk
+    </footer>
+  </main>
+</body>
+</html>
