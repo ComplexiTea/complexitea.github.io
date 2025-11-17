@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ComplexiTea - About & Joining</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #f6f7f5;
+      --muted: #c3c9bf;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    main.page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem 1.8rem;
+      max-width: 640px;
+      width: 100%;
+      position: relative;
+    }
+
+    .logo {
+      margin: 0 auto -0.2rem;
+      max-width: 280px;
+      width: 70vw;
+    }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .title {
+      margin-top: 0.9rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 1.3rem;
+    }
+
+    .section {
+      width: 100%;
+      max-width: 640px;
+      text-align: left;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .list {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 1.1rem;
+    }
+
+    .list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .list.numbered {
+      list-style: decimal;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      text-decoration: none;
+    }
+
+    .pill:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    footer {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-decoration-style: dotted;
+    }
+
+    footer a:hover {
+      text-decoration-style: solid;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="logo">
+      <img
+        src="./images/complexitea-logo.png"
+        alt="ComplexiTea research group logo"
+      />
+    </div>
+
+    <h1 class="title">ComplexiTea Research Group</h1>
+    <p class="subtitle">Project overview, how to join, and prerequisites.</p>
+
+    <section class="section">
+      <h2 class="section-title">What is ComplexiTea?</h2>
+      <p class="section-text">
+        ComplexiTea is a small research group focused on theoretical computer science
+        and complexity, with a strong emphasis on understanding real systems through
+        models of computation, algorithmic complexity, and information theory.
+      </p>
+      <p class="section-text">
+        We meet regularly to read papers, design and analyze models, and build small
+        experimental projects that connect theory with practice (reverse engineering,
+        cryptography, verification, security).
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">How to join</h2>
+      <p class="section-text">
+        We are looking for a small group of motivated people who are ready to invest
+        time and energy into learning, reading, and building things together.
+      </p>
+      <ol class="list numbered">
+        <li>Check the prerequisites below and make sure they match your profile.</li>
+        <li>Prepare a short introduction about you and your interests.</li>
+        <li>Join the Signal group and briefly present yourself to the group.</li>
+      </ol>
+      <p class="section-text">
+        We aim for a collaborative atmosphere where everyone reads, presents, and
+        contributes on a regular basis.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Prerequisites</h2>
+      <p class="section-text">
+        This is not an introductory group. You should already be comfortable with
+        core concepts in computer science and be willing to dig into demanding material.
+      </p>
+      <ul class="list">
+        <li>Solid programming skills in at least one language (e.g. C/C++, Rust, Python).</li>
+        <li>Familiarity with basic complexity theory (P, NP, reductions, asymptotic analysis).</li>
+        <li>Comfortable reading and discussing technical material in English.</li>
+        <li>Genuine interest in security, cryptography, reverse engineering, or theoretical CS.</li>
+        <li>Ability to dedicate roughly 5-10 hours per week to reading, thinking, and experiments.</li>
+      </ul>
+    </section>
+
+    <div class="pill-row">
+      <a
+        class="pill"
+        href="https://signal.group/#CjQKIISLb7TSsimNCzGu_kweogAIK9qUr_0z9ksXJ5698l_AEhCHbUyZ2QI2VxElNXTqNVhk"
+      >
+        Join the Signal group
+      </a>
+      <a class="pill" href="index.html">Back to main page</a>
+    </div>
+
+    <footer>
+      Contact (Public group):
+      <a
+        href="https://signal.group/#CjQKIISLb7TSsimNCzGu_kweogAIK9qUr_0z9ksXJ5698l_AEhCHbUyZ2QI2VxElNXTqNVhk"
+      >
+        Signal group link
+      </a>
+    </footer>
+  </main>
+</body>
+</html>
