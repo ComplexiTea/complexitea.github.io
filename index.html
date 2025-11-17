@@ -43,7 +43,7 @@
     }
 
     .logo {
-      margin: 0 auto -0.5rem;   /* logo très proche du texte */
+      margin: 0 auto -0.5rem;
       max-width: 320px;
       width: 80vw;
     }
@@ -76,11 +76,19 @@
     }
 
     .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
       font-size: 0.75rem;
       color: var(--muted);
       border: 1px solid rgba(255, 255, 255, 0.14);
+      text-decoration: none;
+    }
+
+    .pill:hover {
+      border-color: rgba(255, 255, 255, 0.3);
     }
 
     footer {
@@ -123,6 +131,7 @@
       <span class="pill">Paper reading</span>
       <span class="pill">Student projects</span>
       <span class="pill">Discussions (with tea)</span>
+      <a class="pill" href="about_&_joining.html">About & joining</a>
     </div>
 
     <footer>
