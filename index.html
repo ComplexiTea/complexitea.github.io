@@ -4,9 +4,13 @@
   <meta charset="UTF-8" />
   <title>ComplexiTea - Research Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./images/complexitea-logo.png" />
+
   <style>
     :root {
-      --bg-dark: #050806;
+      --bg-dark: #000000;
       --text-dark: #f6f7f5;
       --muted-dark: #c3c9bf;
 
@@ -29,8 +33,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at top, #1b3c1f 0, #050806 55%);
-      color: var(--text-dark);
+    }
+
+    /* Theme variables */
+    body.dark-theme {
+      --bg: var(--bg-dark);
+      --text: var(--text-dark);
+      --muted: var(--muted-dark);
+    }
+
+    body.light-theme {
+      --bg: var(--bg-light);
+      --text: var(--text-light);
+      --muted: var(--muted-light);
+    }
+
+    body {
+      background: var(--bg, #000000); /* black by default */
+      color: var(--text, #f6f7f5);
     }
 
     main.page {
@@ -42,6 +62,33 @@
       padding: 2rem 1.5rem 1.8rem;
       max-width: 560px;
       width: 100%;
+      position: relative;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      align-self: flex-end;
+      padding: 0.35rem 0.9rem;
+      margin-bottom: 1.2rem;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+      background: transparent;
+      font-size: 0.75rem;
+      cursor: pointer;
+      color: var(--muted);
+      transition: background 0.15s ease, color 0.15s ease,
+        transform 0.1s ease, box-shadow 0.15s ease;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+      transform: translateY(-1px);
+    }
+
+    .theme-toggle:active {
+      transform: translateY(0);
+      box-shadow: none;
     }
 
     .logo {
@@ -58,13 +105,13 @@
 
     .subtitle {
       font-size: 0.95rem;
-      color: var(--muted-dark);
+      color: var(--muted);
       margin-bottom: 1.1rem;
     }
 
     .keywords {
       font-size: 0.85rem;
-      color: var(--muted-dark);
+      color: var(--muted);
       margin-bottom: 1.6rem;
     }
 
@@ -79,36 +126,42 @@
     .pill {
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
       font-size: 0.75rem;
-      color: var(--muted-dark);
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    body.dark-theme .pill {
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    body.light-theme .pill {
+      border-color: rgba(0, 0, 0, 0.12);
     }
 
     footer {
       font-size: 0.75rem;
-      color: var(--muted-dark);
+      color: var(--muted);
     }
 
-    /* Light mode variant */
-    @media (prefers-color-scheme: light) {
-      body {
-        background: var(--bg-light);
-        color: var(--text-light);
-      }
-      .subtitle,
-      .keywords,
-      .pill,
-      footer {
-        color: var(--muted-light);
-      }
-      .pill {
-        border-color: rgba(0, 0, 0, 0.08);
-      }
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-decoration-style: dotted;
+    }
+
+    footer a:hover {
+      text-decoration-style: solid;
     }
   </style>
 </head>
-<body>
+<body class="dark-theme">
   <main class="page">
+    <button class="theme-toggle" type="button">
+      Switch to light mode
+    </button>
+
     <div class="logo">
       <img src="./images/complexitea-logo.png" alt="ComplexiTea research group logo" />
     </div>
@@ -118,7 +171,7 @@
     </p>
 
     <p class="keywords">
-      Algorithmic complexity · information theory · reverese engineering · cryptography · models of computation
+      Algorithmic complexity · information theory · reverse engineering · cryptography · models of computation
     </p>
 
     <div class="pill-row">
@@ -129,8 +182,51 @@
     </div>
 
     <footer>
-      Contact (Public group): https://signal.group/#CjQKIISLb7TSsimNCzGu_kweogAIK9qUr_0z9ksXJ5698l_AEhCHbUyZ2QI2VxElNXTqNVhk
+      Contact (Public group):
+      <a href="https://signal.group/#CjQKIISLb7TSsimNCzGu_kweogAIK9qUr_0z9ksXJ5698l_AEhCHbUyZ2QI2VxElNXTqNVhk">
+        Signal group link
+      </a>
     </footer>
   </main>
+
+  <script>
+    (function () {
+      const storageKey = "complexitea-theme";
+      const body = document.body;
+      const toggleBtn = document.querySelector(".theme-toggle");
+
+      if (!toggleBtn) return;
+
+      function setButtonLabel(theme) {
+        if (theme === "dark-theme") {
+          toggleBtn.textContent = "Switch to light mode";
+        } else {
+          toggleBtn.textContent = "Switch to dark mode";
+        }
+      }
+
+      function applyTheme(theme) {
+        body.classList.remove("dark-theme", "light-theme");
+        body.classList.add(theme);
+        setButtonLabel(theme);
+      }
+
+      // Initial theme: saved in localStorage, otherwise OS preference, otherwise dark
+      const savedTheme = localStorage.getItem(storageKey);
+      const prefersDark = window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      const initialTheme = savedTheme || (prefersDark ? "dark-theme" : "light-theme");
+      applyTheme(initialTheme);
+
+      toggleBtn.addEventListener("click", function () {
+        const newTheme = body.classList.contains("dark-theme")
+          ? "light-theme"
+          : "dark-theme";
+        applyTheme(newTheme);
+        localStorage.setItem(storageKey, newTheme);
+      });
+    })();
+  </script>
 </body>
 </html>
