@@ -65,11 +65,22 @@
       position: relative;
     }
 
-    /* Theme toggle button */
+    .logo {
+      margin: 0 auto 1.4rem;
+      max-width: 260px;
+      width: 70vw;
+    }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Theme toggle button UNDER the logo */
     .theme-toggle {
-      align-self: flex-end;
+      margin-bottom: 1.8rem;
       padding: 0.35rem 0.9rem;
-      margin-bottom: 1.2rem;
       border-radius: 999px;
       border: 1px solid currentColor;
       background: transparent;
@@ -89,18 +100,6 @@
     .theme-toggle:active {
       transform: translateY(0);
       box-shadow: none;
-    }
-
-    .logo {
-      margin: 0 auto 1.7rem;
-      max-width: 260px;
-      width: 70vw;
-    }
-
-    .logo img {
-      display: block;
-      width: 100%;
-      height: auto;
     }
 
     .subtitle {
@@ -158,13 +157,13 @@
 </head>
 <body class="dark-theme">
   <main class="page">
-    <button class="theme-toggle" type="button">
-      Switch to light mode
-    </button>
-
     <div class="logo">
       <img src="./images/complexitea-logo.png" alt="ComplexiTea research group logo" />
     </div>
+
+    <button class="theme-toggle" type="button">
+      Switch to light mode
+    </button>
 
     <p class="subtitle">
       Research group in theoretical computer science and complexity.
