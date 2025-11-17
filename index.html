@@ -5,7 +5,7 @@
   <title>ComplexiTea - Research Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Favicons (assume images are recadrées) -->
+  <!-- Favicons (version recadrée conseillée) -->
   <link
     rel="icon"
     type="image/png"
@@ -29,7 +29,6 @@
       --bg: #000000;
       --text: #f6f7f5;
       --muted: #c3c9bf;
-      --accent: #e33434; /* rouge de la ligne */
     }
 
     * {
@@ -63,7 +62,7 @@
     }
 
     .logo {
-      margin: 0 auto 0;        /* pas d’espace sous le logo */
+      margin: 0 auto 0.1rem;   /* logo très proche du texte */
       max-width: 320px;
       width: 80vw;
     }
@@ -72,13 +71,6 @@
       display: block;
       width: 100%;
       height: auto;
-    }
-
-    .divider {
-      width: 60%;
-      border: 0;
-      border-top: 2px solid var(--accent);
-      margin: 0.1rem auto 0.4rem;  /* très proche du logo et du texte */
     }
 
     .subtitle {
@@ -135,8 +127,6 @@
         alt="ComplexiTea research group logo"
       />
     </div>
-
-    <hr class="divider" />
 
     <p class="subtitle">
       Research group in theoretical computer science and complexity.
