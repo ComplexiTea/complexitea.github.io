@@ -1,126 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>ComplexiTea - Members</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    :root {
+      --bg: #000000;
+      --text: #f6f7f5;
+      --muted: #c3c9bf;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 2rem 1.5rem;
-      line-height: 1.6;
-      background: #fafafa;
-      color: #111;
+      padding: 0;
     }
 
-    main {
-      max-width: 900px;
-      margin: 0 auto;
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 1.3rem;
-      margin-top: 1.75rem;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    nav {
-      margin-bottom: 2rem;
+    main.page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 2rem 1.5rem 1.8rem;
+      max-width: 640px;
+      width: 100%;
+      position: relative;
+    }
+
+    .title {
+      margin-top: 0.2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .subtitle {
       font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 1.3rem;
     }
 
-    nav a {
-      margin: 0 0.75rem;
-      text-decoration: none;
-      color: #0055aa;
+    .section {
+      width: 100%;
+      max-width: 640px;
+      text-align: left;
+      margin-bottom: 1.6rem;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .section-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
     }
 
     .member-list {
       list-style: none;
       padding-left: 0;
+      margin-top: 0.6rem;
     }
 
     .member {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #ddd;
+      margin-bottom: 0.9rem;
+      padding: 0.8rem 0.9rem;
+      border-radius: 0.9rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .member p {
-      margin: 0.15rem 0;
-    }
-
-    .member .meta {
+    .member-name {
       font-size: 0.9rem;
-      color: #555;
+      margin-bottom: 0.15rem;
     }
 
-    .member a {
-      color: #0055aa;
+    .member-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .member-focus {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       text-decoration: none;
     }
 
-    .member a:hover {
-      text-decoration: underline;
+    .pill:hover {
+      border-color: rgba(255, 255, 255, 0.3);
     }
 
     footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
+      color: var(--muted);
       text-align: center;
-      color: #555;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-decoration-style: dotted;
+    }
+
+    footer a:hover {
+      text-decoration-style: solid;
     }
   </style>
 </head>
 <body>
-  <main>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about_&_joining.html">About &amp; Joining</a>
-      <a href="members.html">Members</a>
-    </nav>
-
-    <h1>Members</h1>
-    <p>
-      Current members of the ComplexiTea research group, along with their interests and ways to contact them.
+  <main class="page">
+    <h1 class="title">Members</h1>
+    <p class="subtitle">
+      Current participants of the ComplexiTea research group.
     </p>
 
-    <h2>Core members</h2>
-    <ul class="member-list">
-      <li class="member">
-        <h3>zirvokel</h3>
-        <p class="meta">Interests: microsoft services, malware analysis & reverse engineering.</p>
-        <p>
-          Short bio: a couple of sentences describing background, current position (student, engineer, researcher),
-          and what they are focusing on within the group.
-        </p>
-        <p class="meta">
-          Links:
-          <a href="https://github.com/federicogolgo">GitHub</a>
-        </p>
-      </li>
+    <section class="section">
+      <h2 class="section-title">Core members</h2>
+      <ul class="member-list">
+        <li class="member">
+          <div class="member-name">zirvokel</div>
+          <div class="member-role">Organiser</div>
+          <div class="member-focus">
+            Interests: microsoft services, malware analysis & reverse engineering.
+          </div>
+        </li>
+      </ul>
+    </section>
 
-    </ul>
+    <section class="section">
+      <h2 class="section-title">Friends & collaborators</h2>
+      <p class="section-text">
+        We also have occasional visitors and collaborators who join specific
+        reading sessions or project sprints.
+      </p>
+      <ul class="member-list">
+        <li class="member">
+          <div class="member-name">0xKylm</div>
+          <div class="member-role">Guest · windows exploitation</div>
+          <div class="member-focus">
+            Reading of published articles.
+          </div>
+        </li>
+        <li class="member">
+          <div class="member-name">eth_0x2707</div>
+          <div class="member-role">Guest · web3</div>
+          <div class="member-focus">
+            Reading of published articles.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Open seats</h2>
+      <p class="section-text">
+        We keep the group intentionally small, but we are open to a few new
+        members who are motivated, independent, and genuinely curious about
+        complexity and real systems.
+      </p>
+      <p class="section-text">
+        If this sounds like you, check the <a href="about_&_joining.html">About &amp; Joining</a>
+        page and introduce yourself in the public Signal group.
+      </p>
+    </section>
 
     <footer>
-      <p>
-        Interested in joining? See <a href="about_&_joining.html">About &amp; Joining</a>.
-      </p>
+      Back to home page:
+      <a href="index.html">Home</a>
+      &nbsp;·&nbsp;
+      <a href="about_&_joining.html">About &amp; joining</a>
     </footer>
   </main>
 </body>
